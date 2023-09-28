@@ -3,5 +3,29 @@
 {% block title %}About{% endblock title %}
 
 {% block content %}
-This is about Page
+{% load static %}
+<header class="bg-info py-2">
+    <div class="container px-4 px-lg-5 my-3">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">About Us</h1>
+            <p class="lead fw-normal text-white-50 mb-0">DeaaTH Ecommerce Website</p>
+        </div>
+    </div>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <p align="justify">
+                We are a E-commerce (electronic commerce) is the activity of electronically buying or selling products on online services or over the Internet. E-commerce draws on technologies such as mobile commerce, electronic funds transfer, supply chain management, Internet marketing, online transaction processing, electronic data interchange (EDI), inventory management systems, and automated data collection systems. E-commerce is the largest sector of the electronics industry and is in turn driven by the technological advances of the semiconductor industry.
+                The future trends in the GCC countries will be similar to that of the western countries. Despite the forces that push business to adapt e-commerce as a means to sell goods and products, the manner in which customers make purchases is similar in countries from these two regions. For instance, there has been an increased usage of smartphones which comes in conjunction with an increase in the overall internet audience from the regions. Yuldashev writes that consumers are scaling up to more modern technology that allows for mobile marketing. However, the percentage of smartphone and internet users who make online purchases is expected to vary in the first few years. It will be independent on the willingness of the people to adopt this new trend (The Statistics Portal). For example, UAE has the greatest smartphone penetration of 73.8 per cent and has 91.9 per cent of its population has access to the internet. On the other hand, smartphone penetration in Europe has been reported to be at 64.7 per cent (The Statistics Portal). Regardless, the disparity in percentage between these regions is expected to level out in future because e-commerce technology is expected to grow to allow for more users.
+                The e-commerce business within these two regions will result in competition. Government bodies at the country level will enhance their measures and strategies to ensure sustainability and consumer protection (Krings, et al.). These increased measures will raise the environmental and social standards in the countries, factors that will determine the success of the e-commerce market in these countries. For example, an adoption of tough sanctions will make it difficult for companies to enter the e-commerce market while lenient sanctions will allow ease of companies. As such, the future trends between GCC countries and the Western countries will be independent of these sanctions (Krings, et al.). These countries need to make rational conclusions in coming up with effective sanctions.
+            </p>
+        </div>
+        <div class="col-4">
+            <div class="mt-2">
+            <img src="{% static "img/about.jpg" %}" height="420" />
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
