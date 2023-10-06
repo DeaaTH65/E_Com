@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Product
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 def home(request):
@@ -24,3 +24,9 @@ def login_user(request):
             return redirect('login')
     else:
         return render(request, 'login.html', {})
+    
+    
+def logout_user(request):
+    logout(request)
+    return redirect('home')
+    
