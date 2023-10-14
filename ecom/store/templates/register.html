@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block content %}
+{% load static %}
+<header class="bg-info py-2">
+    <div class="container px-4 px-lg-5 my-3">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Register User</h1>
+        </div>
+    </div>
+</header>
+<div class="container mt-4">
+    <form method="POST" action="{% url "login" %}">
+        {% csrf_token %}
+        
+        <button type="submit" class="btn btn-primary mb-4">Register</button>
+    </form>
+</div>
+{% endblock content %}
