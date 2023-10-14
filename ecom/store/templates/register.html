@@ -14,7 +14,7 @@
 <div class="container mt-4">
     <form method="POST" action="{% url "login" %}">
         {% csrf_token %}
-        
+        {{form.as_p}}
         <button type="submit" class="btn btn-primary mb-4">Register</button>
     </form>
 </div>
