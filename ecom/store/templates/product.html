@@ -14,6 +14,16 @@
                 <center>
                 <h5 class="card-title">{{product.name}}</h5>
                 <p class="card-text">{{product.description}}</p>
+
+                {% if product.is_sale %}
+                    <div class="badge bg-info text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale!!</div>
+                    <strike> ${{product.price}} </strike>
+                    <p>${{product.sale_price}}</p>
+                {% else %}
+                    ${{product.price}}
+                {% endif %}
+
+                <br /> <br />
                 <a href="{% url "home" %}" class="btn btn-secondary">Home</a>
                 </center>
             </div>
