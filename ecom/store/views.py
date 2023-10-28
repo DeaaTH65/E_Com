@@ -64,7 +64,7 @@ def product(request, pk):
 
 def category(request, ct):
     # replace hyphens with spaces
-    ct = ct.replace('-' ' ')
+    ct = ct.replace('-', ' ')
     
     # grab category from url
     try:
