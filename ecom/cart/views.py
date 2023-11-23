@@ -11,10 +11,12 @@ def cart_summary(request):
 
 
 def cart_add(request):
-    cart = Cart(request)
-    if request.POST.get('action') == 'post':
-        product_id = int(request.POST.get('product_id'))
-        product = get_object_or_404(Product, id=product_id)
-        cart.add(product=product)
-        response = JsonResponse({'Product name: ': product.name})
-        return response
+	cart = Cart(request)
+	if request.POST.get('action') == 'post':
+		product_id = int(request.POST.get('product_id'))
+		product = get_object_or_404(Product, id=product_id)
+		cart.add(product=product)
+		cart_quantity = cart.__len__()
+		# response = JsonResponse({'Product Name: ': product.name})
+		response = JsonResponse({'qty': cart_quantity})
+		return response
