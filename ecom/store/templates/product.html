@@ -2,12 +2,9 @@
 {% block content %}
 
 
-
 <div class="container">
-<br/>
 
-
-<div class="card mb-3">
+<div class="card mb-3 mt-4">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
@@ -15,56 +12,53 @@
     <div class="col-md-8">
       <div class="card-body">
         <center>
-        <h5 class="card-title">{{ product.name }}</h5>
-        <br/>
-        <p class="card-text justified">{{ product.description }}</p>
-        
-        {% if product.is_sale %}
-        <div class="d-flex justify-content-center small text-warning mb-2">
-                <div class="bi-star-fill"></div>
+          <h5 class="card-title">{{ product.name }}</h5>
+          <br/>
+          <p class="card-text justified">{{ product.description }}</p>
+          
+          {% if product.is_sale %}
+            <div class="d-flex justify-content-center small text-warning mb-2">
+              <div class="bi-star-fill"></div>
                 &nbsp;&nbsp;Sale!&nbsp;&nbsp;
                 <div class="bi-star-fill"></div>
-                </div>
-
-                <!-- Product price-->
-                <strike>
-                ${{ product.price }}
-                </strike>
-                &nbsp;
-                ${{ product.sale_price }}
-
-
-
-        {% else %}
-            ${{ product.price }}
-            
-        {% endif %}
-            <br/><br/>
-<div class="row justify-content-center">
-    <div class="col-md-2">Quantity:</div>
-                <div class="col-md-2">
-                <select class="form-select form-select-sm" id="qty-cart">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                </div>
             </div>
-            <br/><br/>
-        <a href="{% url 'home'%}" class="btn btn-secondary">Home</a>
-        <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
 
-    </center>
+            <!-- Product price-->
+            <strike>
+            ${{ product.price }}
+            </strike>
+            &nbsp;
+            ${{ product.sale_price }}
+
+          {% else %}
+              ${{ product.price }}
+              
+          {% endif %}
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-2">Quantity:</div>
+            <div class="col-md-2">
+              <select class="form-select form-select-sm" id="qty-cart">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+
+          <br/><br/>
+          <a href="{% url 'home'%}" class="btn btn-secondary">Home</a>
+          <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
+
+        </center>
       </div>
     </div>
   </div>
 </div>
 </div>
         	
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <script>
 // Check if button pressed
@@ -92,11 +86,7 @@ $(document).on('click', '#add-cart', function(e){
 
     });
 
-
-
 })
-
-
 
 
 </script>
